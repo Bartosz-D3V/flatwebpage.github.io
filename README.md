@@ -1,7 +1,7 @@
 ## Modern Single Web Page 
 
 This project has been done using https://dribbble.com/shots/1314681-Freebie-PSD-Perth-A-Free-Flat-Web-Design as a base. Perth PSD was a huge and great inspiration for me, but I did not want to make 100% one-to-one copy of it so some changes are more than expected.
-Images and design **is not** mine - only code is.
+Images and design **are not** mine - only code is.
 
 ## Code Example
 

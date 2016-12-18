@@ -263,6 +263,7 @@ bower_components
 
 ### Distributed folder ###
 dist
+.publish
 
 ### Compiled SASS files ###
 app/css/compiled

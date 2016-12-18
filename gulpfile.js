@@ -70,7 +70,7 @@ gulp.task("styles", function () {
         .pipe(concatCSS(settings.concatCSSName))
         .pipe(rename({
             suffix: ".min",
-            extname: "css"
+            extname: ".css"
         }))
         .pipe(cleanCSS())
         .pipe(replace("../../../font-awesome/", "../"))
@@ -92,7 +92,7 @@ gulp.task("scripts", function () {
         .pipe(uglify())
         .pipe(rename({
             suffix: ".min",
-            extname: "js"
+            extname: ".js"
         }))
         .pipe(gulp.dest(settings.distLocation + "/js"))
         .pipe(reload({stream: true}));
@@ -105,7 +105,7 @@ gulp.task("shiv", function () {
         .pipe(uglify())
         .pipe(rename({
             suffix: ".min",
-            extname: "js"
+            extname: ".js"
         }))
         .pipe(gulp.dest(settings.distLocation + "/js"))
         .pipe(reload({stream: true}));
