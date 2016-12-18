@@ -1,0 +1,18 @@
+.navbar-static-top {
+  .navbar-nav {
+    > li {
+      > a {
+        &:hover, &:focus {
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+.navbar {
+  margin: 0;
+  background-color: $primaryMainColor;
+  border: none;
+}

@@ -1,0 +1,89 @@
+*:focus {
+  outline: none;
+}
+
+body {
+  font-family: Roboto, serif;
+  line-height: 160%;
+}
+
+main, section, footer {
+  max-height: 70vh;
+  position: static;
+  color: $button-text-color;
+  background-color: $primaryMainColor;
+  overflow: hidden;
+}
+
+section {
+  position: relative;
+  @include replace-text-colors($about-font-color, $about-font-2nd-color);
+
+  &#about {
+    z-index: 2;
+    margin-top: -3%;
+    background-color: $about-color;
+  }
+  &#contact {
+    z-index: 3;
+    margin-top: -3%;
+    background-color: $button-text-color;
+  }
+  &#git {
+    z-index: 4;
+    background-color: $footerColor;
+  }
+  &#social {
+    z-index: 5;
+    background-color: $about-color;
+  }
+}
+
+footer {
+  z-index: 4;
+  color: $about-font-color;
+  background-color: $button-text-color;
+}
+
+h1 {
+  font-family: "Dancing Script", serif;
+  font-style: italic;
+  color: $button-text-color;
+  font-size: 5em;
+}
+
+h2 {
+  font-size: 3em;
+  display: block;
+}
+
+p {
+  color: $about-font-color;
+  font-size: 1.2em;
+  line-height: inherit;
+  text-align: justify;
+  margin-top: 4%;
+  &#secondParagraph {
+    font-style: italic;
+    border-left: thick solid $primaryMainColor;
+    padding-left: 4%;
+  }
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+button {
+  @include smoothTransition();
+  &:hover {
+    background-color: $button-text-color;
+    color: black;
+    border: none;
+    i {
+      color: black;
+    }
+  }
+}
+

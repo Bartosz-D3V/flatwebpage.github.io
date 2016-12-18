@@ -1,0 +1,86 @@
+.flat-button {
+  font-size: 1.4em;
+  color: $button-text-color;
+  background: $button-color;
+  border: none;
+  width: 200px;
+  height: 64px;
+  margin-top: 4%;
+  i {
+    font-size: inherit;
+    color: inherit;
+  }
+}
+
+.fa {
+  font-size: 3em;
+  color: $about-font-color;
+}
+  #logo {
+    background-color: $button-text-color;
+    width: 116px;
+    height: 116px;
+    i {
+      font-family: "Dancing Script", serif;
+      font-style: italic;
+      font-size: 5em;
+      color: $primaryMainColor;
+      height: 30%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+
+.push-up {
+  display: inline-block;
+  margin-bottom: 8%;
+}
+
+.italics-bold {
+  font-style: italic;
+  font-weight: bold;
+  display: inline
+}
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.image-to-left {
+  left: 0;
+  margin-right: 5%;
+  margin-top: 160px;
+}
+
+.section-wrapper {
+  padding-top: 10%;
+}
+
+.shrink-img {
+  max-height: 60%;
+  max-width: 60%;
+}
+
+.center {
+  padding-bottom: 2%;
+  padding-top: 2%;
+  text-align: center;
+}
+
+.round-button {
+  width: 70px;
+  height: 70px;
+  border: solid $about-font-color 4.2px;
+  border-radius: 50% 50% 50% 50%;
+}
+
+.add-space-right {
+  margin-right: 4%;
+  margin-top: 4%;
+}

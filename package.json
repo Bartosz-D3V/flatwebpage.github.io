@@ -1,0 +1,56 @@
+{
+  "name": "exampleperthwebsiteportfolio.com",
+  "version": "0.0.1",
+  "description": "\u001b[A\u001b[B\u001b[Example front-end layout skills",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/Bartosz_Wyporkiewicz/portfolio_event_mananger.git"
+  },
+  "keywords": [
+    "portfolio",
+    "psd",
+    "web",
+    "development",
+    "js",
+    "html"
+  ],
+  "author": "Bartosz Wyporkiewicz",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/Bartosz_Wyporkiewicz/portfolio_event_mananger#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.1.1",
+    "reset-css": "^2.2.0",
+    "sass": "^0.5.0",
+    "waypoints": "^4.0.1"
+  },
+  "devDependencies": {
+    "animate.css": "^3.5.2",
+    "browser-sync": "^2.18.2",
+    "clean-css": "^3.4.21",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-obfuscate": "^0.2.9",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-uncss": "^1.0.6",
+    "gulp-util": "^3.0.7",
+    "html5shiv": "^3.7.3",
+    "node-reset-scss": "^1.0.1",
+    "run-sequence": "^1.2.2"
+  }
+}
