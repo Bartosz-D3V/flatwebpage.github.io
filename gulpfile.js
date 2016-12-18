@@ -1,6 +1,6 @@
 var gulp = require("gulp"),
     sass = require("gulp-sass"),
-    resetCSS = require('node-reset-scss'),
+    resetCSS = require("node-reset-scss"),
     concatCSS = require("gulp-concat-css"),
     cleanCSS = require("gulp-clean-css"),
     uncss = require("gulp-uncss"),
@@ -15,8 +15,9 @@ var gulp = require("gulp"),
     plumber = require("gulp-plumber"),
     rename = require("gulp-rename"),
     clean = require("gulp-clean"),
-    gutil = require('gulp-util'),
-    replace = require("gulp-replace");
+    gutil = require("gulp-util"),
+    replace = require("gulp-replace"),
+    deploy = require("gulp-gh-pages");
 
 var settings = {
     distLocation: "./dist",
@@ -57,7 +58,7 @@ gulp.task("styles", function () {
     return gulp.src(libraries)
         .pipe(plumber(function (error) {
             gutil.log(gutil.colors.red(error.message));
-            this.emit('end');
+            this.emit("end");
         }))
         .pipe(sass({
             includePaths: resetCSS.includePath
@@ -68,7 +69,8 @@ gulp.task("styles", function () {
         }))
         .pipe(concatCSS(settings.concatCSSName))
         .pipe(rename({
-            suffix: ".min"
+            suffix: ".min",
+            extname: "css"
         }))
         .pipe(cleanCSS())
         .pipe(replace("../../../font-awesome/", "../"))
@@ -89,7 +91,8 @@ gulp.task("scripts", function () {
         .pipe(concatJS(settings.concatJSName))
         .pipe(uglify())
         .pipe(rename({
-            suffix: ".min"
+            suffix: ".min",
+            extname: "js"
         }))
         .pipe(gulp.dest(settings.distLocation + "/js"))
         .pipe(reload({stream: true}));
@@ -101,7 +104,8 @@ gulp.task("shiv", function () {
         .pipe(plumber())
         .pipe(uglify())
         .pipe(rename({
-            suffix: ".min"
+            suffix: ".min",
+            extname: "js"
         }))
         .pipe(gulp.dest(settings.distLocation + "/js"))
         .pipe(reload({stream: true}));
@@ -121,10 +125,10 @@ gulp.task("images", function () {
 });
 
 //Copy fonts
-gulp.task('fonts', function () {
-    return gulp.src(['node_modules/bootstrap/fonts/**/*.*',
-        'node_modules/font-awesome/fonts/**/*'])
-        .pipe(gulp.dest('./dist/fonts'));
+gulp.task("fonts", function () {
+    return gulp.src(["node_modules/bootstrap/fonts/**/*.*",
+        "node_modules/font-awesome/fonts/**/*"])
+        .pipe(gulp.dest("./dist/fonts"));
 });
 
 //Browser sync
@@ -147,6 +151,12 @@ gulp.task("clear", function () {
 //Build the distributable
 gulp.task("build", function (callback) {
     return runSequence(["fonts", "styles", "html", "scripts", "shiv", "images"], callback)
+});
+
+//Deploy project (Used specifically for GitHub Pages)
+gulp.task("deploy", ["build"], function(){
+    return gulp.src("./dist/**/*")
+        .pipe(deploy());
 });
 
 //Watch files for changes and refresh browser

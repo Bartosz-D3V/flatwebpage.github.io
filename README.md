@@ -20,7 +20,7 @@ It is extremally easy to make it up and running:
 2. npm install
 3. gulp
 
-... and you're good to go :)
+... and you"re good to go :)
 
 ## License
 
