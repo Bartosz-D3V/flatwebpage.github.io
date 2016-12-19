@@ -64,16 +64,17 @@ gulp.task("styles", function () {
             includePaths: resetCSS.includePath
         }))
         .pipe(combineMQ())
-        .pipe(uncss({
-            html: [settings.indexLocation]
-        }))
+    //    .pipe(uncss({
+    //        html: [settings.indexLocation],
+    //        ignore: ['animated', '.slideInUp', '.zoomInRight', '.bounceIn']
+    //    }))
         .pipe(concatCSS(settings.concatCSSName))
         .pipe(rename({
             suffix: ".min",
             extname: ".css"
         }))
         .pipe(cleanCSS())
-        .pipe(replace("../../../font-awesome/", "../"))
+        .pipe(replace("../../font-awesome/", "../"))
         .pipe(gulp.dest(settings.distLocation + "/css"))
         .pipe(reload({stream: true}));
 });
@@ -154,7 +155,7 @@ gulp.task("build", function (callback) {
 });
 
 //Deploy project (Used specifically for GitHub Pages)
-gulp.task("deploy", ["build"], function(){
+gulp.task("deploy", ["build"], function () {
     return gulp.src("./dist/**/*")
         .pipe(deploy());
 });

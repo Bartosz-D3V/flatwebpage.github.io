@@ -2,8 +2,16 @@
   .navbar-nav {
     > li {
       > a {
+        @include smoothTransition();
         &:hover, &:focus {
           background-color: white;
+          color: black;
+        }
+      }
+      &.active {
+        background-color: white;
+        color: black;
+        > a {
           color: black;
         }
       }

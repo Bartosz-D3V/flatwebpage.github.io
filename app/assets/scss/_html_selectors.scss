@@ -57,6 +57,10 @@ h2 {
   display: block;
 }
 
+a {
+  color: black;
+}
+
 p {
   color: $about-font-color;
   font-size: 1.2em;
@@ -75,7 +79,7 @@ img {
   max-height: 100%;
 }
 
-button {
+button, li {
   @include smoothTransition();
   &:hover {
     background-color: $button-text-color;
