@@ -20,14 +20,14 @@ var gulp = require("gulp"),
     deploy = require("gulp-gh-pages");
 
 var settings = {
-    distLocation: "./dist",
-    indexLocation: "app/index.html",
-    imagesLocation: "app/assets/images",
-    scssLocation: "app/assets/scss",
-    fontsLocation: "app/assets/fonts",
-    concatCSSName: "bundle.css",
-    concatJSName: "bundle.js"
-};
+        distLocation: "./dist",
+        indexLocation: "app/index.html",
+        imagesLocation: "app/assets/images",
+        scssLocation: "app/assets/scss",
+        fontsLocation: "app/assets/fonts",
+        concatCSSName: "bundle.css",
+        concatJSName: "bundle.js"
+    };
 
 //Minify HTML code
 gulp.task("html", function () {
@@ -64,10 +64,10 @@ gulp.task("styles", function () {
             includePaths: resetCSS.includePath
         }))
         .pipe(combineMQ())
-    //    .pipe(uncss({
-    //        html: [settings.indexLocation],
-    //        ignore: ['animated', '.slideInUp', '.zoomInRight', '.bounceIn']
-    //    }))
+        //    .pipe(uncss({
+        //        html: [settings.indexLocation],
+        //        ignore: ['animated', '.slideInUp', '.zoomInRight', '.bounceIn']
+        //    }))
         .pipe(concatCSS(settings.concatCSSName))
         .pipe(rename({
             suffix: ".min",

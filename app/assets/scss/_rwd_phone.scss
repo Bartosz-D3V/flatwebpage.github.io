@@ -27,7 +27,19 @@
     height: 40%;
   }
   #logo {
-    width: 30% !important;
-    height: 30% !important;
+    background-color: $button-text-color;
+    width: auto;
+    height: 20%;
+    i {
+      font-family: "Dancing Script", serif;
+      font-style: italic;
+      font-size: 5em;
+      color: $primaryMainColor;
+      height: 30%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }
