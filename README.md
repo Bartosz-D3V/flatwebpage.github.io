@@ -3,6 +3,8 @@
 This project has been done using https://dribbble.com/shots/1314681-Freebie-PSD-Perth-A-Free-Flat-Web-Design as a base. Perth PSD was a huge and great inspiration for me, but I did not want to make 100% one-to-one copy of it so some changes are more than expected.
 Images and design **are not** mine - only code is.
 
+Live demo: https://bartosz-d3v.github.io/flatwebpage.github.io/
+
 ## Code Example
 
 I created this website to practise my front-end skills a little bit.
