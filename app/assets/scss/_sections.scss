@@ -1,0 +1,16 @@
+main {
+  min-width: 100%;
+  min-height: 70%;
+  background-color: $header-color;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  color: white;
+}
+
+section{
+  &#about{
+
+  }
+}

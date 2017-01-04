@@ -1,0 +1,25 @@
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  background-color: $header-color;
+  img{
+    margin-left: $page-margin;
+  }
+  nav {
+    top: 0;
+    margin-right: $page-margin;
+    &.navigation {
+      ul {
+        li {
+          @include button-layout;
+          font-size: 2.7em;
+          display: inline-block;
+          list-style-type: none;
+          padding: 12px 12px 12px 12px;
+        }
+      }
+    }
+  }
+}

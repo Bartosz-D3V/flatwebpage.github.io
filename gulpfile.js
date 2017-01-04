@@ -50,7 +50,6 @@ gulp.task("html", function () {
 //NOTE2: UnCSS is great, but it takes a lot of time to complete, so uncomment it just before release
 gulp.task("styles", function () {
     var libraries = [
-        "node_modules/bootstrap/dist/css/bootstrap.css",
         "node_modules/font-awesome/css/font-awesome.css",
         "node_modules/animate.css/animate.css",
         settings.scssLocation + "/manifest.scss"
@@ -82,9 +81,7 @@ gulp.task("styles", function () {
 //Concat, minify JS files & libraries and copy into dist
 gulp.task("scripts", function () {
     var libraries = [
-        "node_modules/jquery/dist/jquery.js",
         "node_modules/waypoints/lib/jquery.waypoints.js",
-        "node_modules/bootstrap/dist/js/bootstrap.js",
         "app/js/main.js"
     ];
     return gulp.src(libraries)

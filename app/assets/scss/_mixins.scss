@@ -1,15 +1,18 @@
-@mixin replace-text-colors($h1-color, $h2-color) {
-  h1 {
-    color: $h1-color;
-  }
-  h2 {
-    color: $h2-color;
-  }
-}
-
-@mixin smoothTransition(){
+@mixin smoothTransition() {
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
+}
+
+@mixin button-layout() {
+  @include smoothTransition();
+  &:hover {
+    background-color: $button-text-color;
+    color: black;
+    border: none;
+    i {
+      color: black;
+    }
+  }
 }
