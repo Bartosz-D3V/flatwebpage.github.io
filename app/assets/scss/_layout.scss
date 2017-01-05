@@ -1,42 +1,17 @@
-* {
-  font-family: Roboto, serif;
-  margin: 0;
-}
-
-h1 {
-  font-size: 6.2em;
-  font-weight: 300;
-  font-family: "Dancing Script", serif;
-}
-
-h2 {
-  font-size: 2.7em;
-}
-
-p {
-  line-height: 25px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-button {
-  @include button-layout;
-  font-size: 1.4em;
-  color: $button-text-color;
-  background: $button-color;
-  border: none;
-  width: 200px;
-  height: 64px;
+.round-button {
+  width: 100px;
+  height: 100px;
+  border: solid $about-font-color 4.2px;
+  border-radius: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
   i {
-    font-size: inherit;
-    color: inherit;
+    font-size: 50px;
   }
 }
 
 .wording {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
+  display: block;
   text-align: right;
 }
 
@@ -50,16 +25,35 @@ button {
   width: 50%;
 }
 
+.aside-one-third{
+  display: inline-block;
+  width: 33%;
+}
+
+.aside-two-third {
+  display: inline-block;
+  width: 66%;
+}
+
 .push-up {
   vertical-align: top;
 }
 
-.push-right{
+.push-down {
+  position: relative;
+  bottom: -280px;
+}
+
+.push-right {
   float: right;
 }
 
-.push-left{
+.push-left {
   float: left;
+}
+
+.center {
+  text-align: center;
 }
 
 .distinct-text {
