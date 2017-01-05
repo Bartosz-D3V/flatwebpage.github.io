@@ -8,8 +8,8 @@ main {
 section {
   position: relative;
   &#about {
-   height: 500px;
-   background-color: $about-color;
+    height: 500px;
+    background-color: $about-color;
     z-index: 50;
   }
   &#devices {
@@ -20,7 +20,7 @@ section {
     background-color: $footerColor;
   }
   &#contact {
-
+    background-color: $about-color;
   }
 }
 

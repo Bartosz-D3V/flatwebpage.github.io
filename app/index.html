@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Portfolio</title>
+    <title>Perth - Light, responsive website</title>
     <meta name="description" content="Perth template">
     <meta name="author" content="Bartosz-D3V">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +12,7 @@
     <script type="text/javascript" src="js/bundle.min.js" async></script>
 
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.min.js" async></script>
+    <script src="js/html5shiv.min.js"></script>
     <![endif]-->
 </head>
 
@@ -31,10 +31,10 @@
 </header>
 <main>
     <div class="section-wrapper">
-        <aside class="aside-one-third">
+        <div class="div-one-third">
             <img id="phone" alt="" src="./images/smartphone.png" class="push-down animated"/>
-        </aside>
-        <aside class="aside-two-third push-up">
+        </div>
+        <div class="div-two-third push-up">
             <div class="wording">
                 <h1>Meet Perth,</h1>
                 <h2>
@@ -46,12 +46,12 @@
                     <i class="fa fa-cloud-download" aria-hidden="true"></i>
                 </button>
             </div>
-        </aside>
+        </div>
     </div>
 </main>
 <section id="about">
     <div class="section-wrapper">
-        <aside class="aside-half push-up">
+        <div class="div-half push-up">
             <h2>A Longwinded Header</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pretium libero id
                 odio finibus pulvinar. Nunc ac neque quis nunc blandit interdum vel ut risus. In maximus rutrum
@@ -64,18 +64,18 @@
             <button type="button" class="flat-button">SAY HELLO
                 <i class="fa fa-envelope" aria-hidden="true"></i>
             </button>
-        </aside>
-        <aside class="aside-half">
+        </div>
+        <div class="div-half">
             <img id="tablet" src="./images/tablet.png" alt="" class="push-right animated"/>
-        </aside>
+        </div>
     </div>
 </section>
 <section id="devices">
     <div class="section-wrapper">
-        <aside class="aside-half">
+        <div class="div-half">
             <img src="images/devices.png" alt="" class="push-left animated"/>
-        </aside>
-        <aside class="aside-half push-up">
+        </div>
+        <div class="div-half push-up">
             <h2>Lorem ipsum dor semit</h2>
             <p class="italics-bold">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rhoncus nisl neque, eget
@@ -85,7 +85,7 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rhoncus nisl neque, eget
                 rutrum diam tincidunt sit amet. Sed suscipit lorem vitae nunc bibendum ultrices.
             </p>
-        </aside>
+        </div>
     </div>
 </section>
 <section id="git">
@@ -94,6 +94,12 @@
         <button type="button" class="flat-button">Check my Git
             <i class="fa fa-github" aria-hidden="true"></i>
         </button>
+        <form>
+            <label>Subscribe to my newsletter
+                <i class="fa fa-newspaper-o"></i>
+            </label>
+            <input type="email" name="email" placeholder="my-awesome-email@mycompany.co.uk">
+        </form>
     </div>
 </section>
 <section id="contact">

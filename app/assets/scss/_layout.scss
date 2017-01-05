@@ -1,10 +1,11 @@
 .round-button {
   width: 100px;
   height: 100px;
-  border: solid $about-font-color 4.2px;
+  border: solid $about-font-color 3px;
   border-radius: 50px;
   margin-left: 20px;
   margin-right: 20px;
+  background-color: $about-font-2nd-color;
   i {
     font-size: 50px;
   }
@@ -20,17 +21,17 @@
   font-weight: bold;
 }
 
-.aside-half {
+.div-half {
   display: inline-block;
   width: 50%;
 }
 
-.aside-one-third{
+.div-one-third {
   display: inline-block;
   width: 33%;
 }
 
-.aside-two-third {
+.div-two-third {
   display: inline-block;
   width: 66%;
 }
