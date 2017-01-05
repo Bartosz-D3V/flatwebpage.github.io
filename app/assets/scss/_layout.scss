@@ -3,16 +3,23 @@
   margin: 0;
 }
 
-h1{
+h1 {
   font-size: 6.2em;
   font-weight: 300;
   font-family: "Dancing Script", serif;
 }
-h2{
-font-size: 2.7em;
+
+h2 {
+  font-size: 2.7em;
 }
 
-button{
+p {
+  line-height: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+button {
   @include button-layout;
   font-size: 1.4em;
   color: $button-text-color;
@@ -20,17 +27,12 @@ button{
   border: none;
   width: 200px;
   height: 64px;
-  margin-top: 50px;
   i {
     font-size: inherit;
     color: inherit;
   }
 }
 
-.section-wrapper {
-  margin-left: $page-margin;
-  margin-right: $page-margin;
-}
 .wording {
   display: flex;
   flex-direction: column;
@@ -38,12 +40,31 @@ button{
   text-align: right;
 }
 
-.italics-bold{
+.italics-bold {
   font-style: italic;
   font-weight: bold;
 }
 
-.aside-half{
+.aside-half {
   display: inline-block;
-  max-width: 50%;
+  width: 50%;
+}
+
+.push-up {
+  vertical-align: top;
+}
+
+.push-right{
+  float: right;
+}
+
+.push-left{
+  float: left;
+}
+
+.distinct-text {
+  font-style: italic;
+  border-left: thick solid;
+  border-color: $header-color;
+  padding-left: 25px;
 }

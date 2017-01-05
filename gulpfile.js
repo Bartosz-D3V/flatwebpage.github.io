@@ -20,14 +20,14 @@ var gulp = require("gulp"),
     deploy = require("gulp-gh-pages");
 
 var settings = {
-        distLocation: "./dist",
-        indexLocation: "app/index.html",
-        imagesLocation: "app/assets/images",
-        scssLocation: "app/assets/scss",
-        fontsLocation: "app/assets/fonts",
-        concatCSSName: "bundle.css",
-        concatJSName: "bundle.js"
-    };
+    distLocation: "./dist",
+    indexLocation: "app/index.html",
+    imagesLocation: "app/assets/images",
+    scssLocation: "app/assets/scss",
+    fontsLocation: "app/assets/fonts",
+    concatCSSName: "bundle.css",
+    concatJSName: "bundle.js"
+};
 
 //Minify HTML code
 gulp.task("html", function () {
@@ -47,7 +47,6 @@ gulp.task("html", function () {
 //Concat minfied CSS libraries and copy into dist
 //Compile Sass to CSS, concat, minify it and rename the result file
 //NOTE: Rename is work-around for font-awesome path that is normally changed into wrong one during sass conversion
-//NOTE2: UnCSS is great, but it takes a lot of time to complete, so uncomment it just before release
 gulp.task("styles", function () {
     var libraries = [
         "node_modules/font-awesome/css/font-awesome.css",
@@ -63,10 +62,10 @@ gulp.task("styles", function () {
             includePaths: resetCSS.includePath
         }))
         .pipe(combineMQ())
-        //    .pipe(uncss({
-        //        html: [settings.indexLocation],
-        //        ignore: ['animated', '.slideInUp', '.zoomInRight', '.bounceIn']
-        //    }))
+      //  .pipe(uncss({
+      //      html: [settings.indexLocation],
+      //      ignore: ['animated', '.slideInUp', '.zoomInRight', '.bounceIn']
+      //  }))
         .pipe(concatCSS(settings.concatCSSName))
         .pipe(rename({
             suffix: ".min",

@@ -1,6 +1,7 @@
 main {
-  min-width: 100%;
-  min-height: 70%;
+  width: 100%;
+  height: 350px;
+  max-height: 500px;
   background-color: $header-color;
   display: flex;
   flex-direction: row-reverse;
@@ -9,8 +10,20 @@ main {
   color: white;
 }
 
-section{
-  &#about{
-
+section {
+  position: relative;
+  &#about {
+    height: 450px;
+    background-color: $about-color;
   }
+  &#devices {
+    background-color: $button-text-color;
+    z-index: 100;
+  }
+}
+
+.section-wrapper {
+  padding-top: 35px;
+  margin-left: $page-margin;
+  margin-right: $page-margin;
 }
