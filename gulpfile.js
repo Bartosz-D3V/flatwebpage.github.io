@@ -66,10 +66,10 @@ gulp.task("styles", function () {
             includePaths: resetCSS.includePath
         }))
         .pipe(combineMQ())
-        //  .pipe(uncss({
-        //      html: [settings.indexLocation],
-        //      ignore: ['animated', '.slideInUp', '.zoomInRight', '.bounceIn']
-        //  }))
+        .pipe(uncss({
+            html: [settings.indexLocation],
+            ignore: ['animated', '.slideInUp', '.zoomInRight', '.bounceIn']
+        }))
         .pipe(concatCSS(settings.concatCSSName))
         .pipe(rename({
             suffix: ".min",
@@ -135,8 +135,8 @@ gulp.task("images", function () {
 //Copy fonts
 gulp.task("fonts", function () {
     return gulp.src([
-            "node_modules/font-awesome/fonts/FontAwesome.otf",
-            "node_modules/font-awesome/fonts/fontawesome-webfont.woff2"])
+        "node_modules/font-awesome/fonts/FontAwesome.otf",
+        "node_modules/font-awesome/fonts/fontawesome-webfont.woff2"])
         .pipe(gulp.dest("./dist/fonts"));
 });
 
