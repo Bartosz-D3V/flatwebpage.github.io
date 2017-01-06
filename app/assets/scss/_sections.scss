@@ -8,17 +8,19 @@ main {
 section {
   position: relative;
   &#about {
-    height: 500px;
     background-color: $about-color;
     z-index: 50;
   }
+
   &#devices {
     background-color: $button-text-color;
     z-index: 100;
   }
+
   &#git {
     background-color: $footerColor;
   }
+
   &#contact {
     background-color: $about-color;
   }

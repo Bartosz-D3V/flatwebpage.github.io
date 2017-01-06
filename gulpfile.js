@@ -7,6 +7,7 @@ var gulp = require("gulp"),
     combineMQ = require("gulp-combine-mq"),
     uglify = require("gulp-uglify"),
     concatJS = require("gulp-concat"),
+    babel = require("gulp-babel"),
     minifyHTML = require("gulp-htmlmin"),
     imageMin = require("gulp-imagemin"),
     browserSync = require("browser-sync").create(),
@@ -77,14 +78,17 @@ gulp.task("styles", function () {
         .pipe(reload({stream: true}));
 });
 
-//Concat, minify JS files & libraries and copy into dist
+//Transform ES6 to ES5, Concat, minify JS files & libraries and copy into dist
 gulp.task("scripts", function () {
     var libraries = [
-        "node_modules/waypoints/lib/jquery.waypoints.js",
+        //"node_modules/waypoints/lib/jquery.waypoints.js",
         "app/js/main.js"
     ];
     return gulp.src(libraries)
         .pipe(plumber())
+        .pipe(babel({
+            presets: ['es2015']
+        }))
         .pipe(concatJS(settings.concatJSName))
         .pipe(uglify())
         .pipe(rename({
@@ -110,7 +114,7 @@ gulp.task("shiv", function () {
 
 //Copy and optimize images
 gulp.task("images", function () {
-    return gulp.src(settings.imagesLocation + "/**/*.{jpg,jpeg,png,gif,svg}")
+    return gulp.src(settings.imagesLocation + "/**/*.{jpg,jpeg,png,gif,svg,ico}")
         .pipe(plumber())
         .pipe(imageMin({
             optimizationLevel: 3,
