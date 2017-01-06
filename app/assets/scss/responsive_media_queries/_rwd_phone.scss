@@ -23,15 +23,20 @@
 
   .round-button {
     display: block;
-    width: 100%;
-    height: 100px;
+    width: 50%;
+    height: 70px;
     border: solid $about-font-color 3px;
-    border-radius: 50px;
-    margin-left: 0;
+    border-radius: 15px;
+    margin-left: 25%;
     margin-right: 0;
     background-color: $about-font-2nd-color;
     i {
-      font-size: 20px;
+      font-size: 60px;
+    }
+    &#burger{
+      i{
+        font-size: 30px;
+      }
     }
   }
 }
