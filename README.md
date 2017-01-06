@@ -10,7 +10,7 @@ Live demo: https://bartosz-d3v.github.io/flatwebpage.github.io/
 ## Code Example
 
 I created this website to practise my front-end skills a little bit.
-I used the following technologies:
+I used the following stack:
 
 1. JavaScript with Gulp
 2. HTML5, CSS3
