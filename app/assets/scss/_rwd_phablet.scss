@@ -27,10 +27,11 @@
 
   li {
     display: block;
-    background-color: $about-font-2nd-color;
-    border-bottom: 1px solid black;
-    &:last-child {
-      border-bottom: none;
+    background-color: $button-color;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    &:last-child{
+      margin: 0;
     }
   }
 
