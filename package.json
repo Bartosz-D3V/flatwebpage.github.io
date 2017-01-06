@@ -45,7 +45,6 @@
     "gulp-obfuscate": "^0.2.9",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
-    "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
     "gulp-uncss": "^1.0.6",

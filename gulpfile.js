@@ -17,7 +17,6 @@ var gulp = require("gulp"),
     rename = require("gulp-rename"),
     clean = require("gulp-clean"),
     gutil = require("gulp-util"),
-    replace = require("gulp-replace"),
     deploy = require("gulp-gh-pages");
 
 var settings = {
@@ -30,16 +29,22 @@ var settings = {
     concatJSName: "bundle.js"
 };
 
-//Minify HTML code
+//Minify & copy HTML code
 gulp.task("html", function () {
     return gulp.src(settings.indexLocation)
         .pipe(plumber())
         .pipe(minifyHTML({
-            collapseWhitespace: true,
-            removeComments: true,
-            useShortDoctype: true,
-            keepClosingSlash: true,
-            decodeEntities: true
+            'html5': true,
+            'caseSensitive': false,
+            'minifyURLs': true,
+            'removeEmptyAttributes': true,
+            'collapseWhitespace': true,
+            'collapseBooleanAttributes': true,
+            'collapseInlineTagWhitespace': true,
+            'removeComments': true,
+            'useShortDoctype': true,
+            'keepClosingSlash': true,
+            'decodeEntities': true
         }))
         .pipe(gulp.dest(settings.distLocation))
         .pipe(reload({stream: true}));
@@ -47,7 +52,6 @@ gulp.task("html", function () {
 
 //Concat minfied CSS libraries and copy into dist
 //Compile Sass to CSS, concat, minify it and rename the result file
-//NOTE: Rename is work-around for font-awesome path that is normally changed into wrong one during sass conversion
 gulp.task("styles", function () {
     var libraries = [
         "node_modules/font-awesome/css/font-awesome.css",
@@ -72,8 +76,12 @@ gulp.task("styles", function () {
             suffix: ".min",
             extname: ".css"
         }))
-        .pipe(cleanCSS())
-        .pipe(replace("../../font-awesome/", "../"))
+        .pipe(cleanCSS({
+            'skip-rebase': true,
+            's0': true,
+            's1': true,
+            'version': true
+        }))
         .pipe(gulp.dest(settings.distLocation + "/css"))
         .pipe(reload({stream: true}));
 });
@@ -81,7 +89,7 @@ gulp.task("styles", function () {
 //Transform ES6 to ES5, Concat, minify JS files & libraries and copy into dist
 gulp.task("scripts", function () {
     var libraries = [
-        //"node_modules/waypoints/lib/jquery.waypoints.js",
+        "node_modules/waypoints/lib/noframework.waypoints.js",
         "app/js/main.js"
     ];
     return gulp.src(libraries)
