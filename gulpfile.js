@@ -40,7 +40,6 @@ gulp.task("html", function () {
             'removeEmptyAttributes': true,
             'collapseWhitespace': true,
             'collapseBooleanAttributes': true,
-            'collapseInlineTagWhitespace': true,
             'removeComments': true,
             'useShortDoctype': true,
             'keepClosingSlash': true,
