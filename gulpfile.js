@@ -124,7 +124,7 @@ gulp.task("images", function () {
     return gulp.src(settings.imagesLocation + "/**/*.{jpg,jpeg,png,gif,svg,ico}")
         .pipe(plumber())
         .pipe(imageMin({
-            optimizationLevel: 3,
+            optimizationLevel: 7,
             progressive: true,
             interlaced: true
         }))
