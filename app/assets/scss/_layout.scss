@@ -65,7 +65,10 @@
 }
 
 #tablet {
-  margin-top: 15px;
+  position: absolute;
+  top: 50px;
+  right: $page-margin;
+  overflow: hidden;
 }
 
 #devices-image {
