@@ -1,5 +1,7 @@
 @media only screen and (max-width: 750px) {
   #burger {
+    background-color: $button-color;
+    border: none;
     display: inline;
     float: right;
     margin-right: $page-margin;
