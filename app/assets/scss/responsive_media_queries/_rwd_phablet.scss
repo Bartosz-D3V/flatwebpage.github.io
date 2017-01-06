@@ -17,11 +17,6 @@
     }
   }
 
-  nav {
-    display: none;
-    width: 95%;
-  }
-
   h1 {
     font-size: 3.72em;
   }
@@ -54,6 +49,11 @@
 
   #phone {
     display: none;
+  }
+
+  .navigation {
+    display: none;
+    width: 95%;
   }
 
   .div-two-third {

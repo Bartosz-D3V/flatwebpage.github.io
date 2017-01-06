@@ -1,36 +1,37 @@
-var gulp = require("gulp"),
-    sass = require("gulp-sass"),
-    resetCSS = require("node-reset-scss"),
-    concatCSS = require("gulp-concat-css"),
-    cleanCSS = require("gulp-clean-css"),
-    uncss = require("gulp-uncss"),
-    combineMQ = require("gulp-combine-mq"),
-    uglify = require("gulp-uglify"),
-    concatJS = require("gulp-concat"),
-    babel = require("gulp-babel"),
-    minifyHTML = require("gulp-htmlmin"),
-    imageMin = require("gulp-imagemin"),
-    browserSync = require("browser-sync").create(),
-    reload = browserSync.reload,
-    runSequence = require("run-sequence"),
-    plumber = require("gulp-plumber"),
-    rename = require("gulp-rename"),
-    clean = require("gulp-clean"),
-    gutil = require("gulp-util"),
-    deploy = require("gulp-gh-pages");
+import gulp from "gulp";
+import sass from "gulp-sass";
+import resetCSS from "node-reset-scss";
+import concatCSS from "gulp-concat-css";
+import cleanCSS from "gulp-clean-css";
+import uncss from "gulp-uncss";
+import combineMQ from "gulp-combine-mq";
+import uglify from "gulp-uglify";
+import concatJS from "gulp-concat";
+import babel from "gulp-babel";
+import minifyHTML from "gulp-htmlmin";
+import imageMin from "gulp-imagemin";
+import browserSync from "browser-sync";
+const reload = browserSync.reload;
+import runSequence from "run-sequence";
+import plumber from "gulp-plumber";
+import rename from "gulp-rename";
+import clean from "gulp-clean";
+import gutil from "gulp-util";
+import deploy from "gulp-gh-pages";
 
-var settings = {
+const settings = {
     distLocation: "./dist",
     indexLocation: "app/index.html",
     imagesLocation: "app/assets/images",
     scssLocation: "app/assets/scss",
+    jsLocation: "app/js",
     fontsLocation: "app/assets/fonts",
     concatCSSName: "bundle.css",
     concatJSName: "bundle.js"
 };
 
-//Minify & copy HTML code
-gulp.task("html", function () {
+//Copy & minify HTML5 code
+gulp.task("html", () => {
     return gulp.src(settings.indexLocation)
         .pipe(plumber())
         .pipe(minifyHTML({
@@ -49,10 +50,9 @@ gulp.task("html", function () {
         .pipe(reload({stream: true}));
 });
 
-//Concat minfied CSS libraries and copy into dist
-//Compile Sass to CSS, concat, minify it and rename the result file
-gulp.task("styles", function () {
-    var libraries = [
+//Copy compiled SCSS files, concat, minifiy and rename
+gulp.task("styles", () => {
+    const libraries = [
         "node_modules/font-awesome/css/font-awesome.css",
         "node_modules/animate.css/animate.css",
         settings.scssLocation + "/manifest.scss"
@@ -68,7 +68,7 @@ gulp.task("styles", function () {
         .pipe(combineMQ())
         .pipe(uncss({
             html: [settings.indexLocation],
-            ignore: ['animated', '.slideInUp', '.zoomInRight', '.bounceIn']
+            ignore: ['animated', '.slideInUp', '.fadeIn', '.zoomIn']
         }))
         .pipe(concatCSS(settings.concatCSSName))
         .pipe(rename({
@@ -85,11 +85,11 @@ gulp.task("styles", function () {
         .pipe(reload({stream: true}));
 });
 
-//Transform ES6 to ES5, Concat, minify JS files & libraries and copy into dist
-gulp.task("scripts", function () {
-    var libraries = [
+//Copy JS files, transform ES6 to ES5, Concat and minify JS files & libraries
+gulp.task("scripts", () => {
+    const libraries = [
         "node_modules/waypoints/lib/noframework.waypoints.js",
-        "app/js/main.js"
+        settings.jsLocation + "/main.js"
     ];
     return gulp.src(libraries)
         .pipe(plumber())
@@ -106,8 +106,8 @@ gulp.task("scripts", function () {
         .pipe(reload({stream: true}));
 });
 
-//Copy & minify html5shiv for older version of the IE (IE < 9)
-gulp.task("shiv", function () {
+//Copy & minify html5shiv
+gulp.task("shiv", () => {
     return gulp.src("node_modules/html5shiv/dist/html5shiv.js")
         .pipe(plumber())
         .pipe(uglify())
@@ -120,7 +120,7 @@ gulp.task("shiv", function () {
 });
 
 //Copy and optimize images
-gulp.task("images", function () {
+gulp.task("images", () => {
     return gulp.src(settings.imagesLocation + "/**/*.{jpg,jpeg,png,gif,svg,ico}")
         .pipe(plumber())
         .pipe(imageMin({
@@ -133,7 +133,7 @@ gulp.task("images", function () {
 });
 
 //Copy fonts
-gulp.task("fonts", function () {
+gulp.task("fonts", () => {
     return gulp.src([
         "node_modules/font-awesome/fonts/FontAwesome.otf",
         "node_modules/font-awesome/fonts/fontawesome-webfont.woff2"])
@@ -141,7 +141,7 @@ gulp.task("fonts", function () {
 });
 
 //Browser sync
-gulp.task("browserSync", function () {
+gulp.task("browserSync", () => {
     return browserSync.init({
         server: {
             baseDir: settings.distLocation,
@@ -151,18 +151,18 @@ gulp.task("browserSync", function () {
 });
 
 //Delete dist folder
-gulp.task("clear", function () {
+gulp.task("clear", () => {
     return gulp.src(settings.distLocation)
         .pipe(clean());
 });
 
 //Build the distributable
-gulp.task("build", function (callback) {
+gulp.task("build", (callback) => {
     return runSequence(["fonts", "styles", "html", "scripts", "shiv", "images"], callback)
 });
 
 //Deploy project (Used specifically for GitHub Pages)
-gulp.task("deploy", ["build"], function () {
+gulp.task("deploy", ["build"], () => {
     return gulp.src("./dist/**/*")
         .pipe(deploy());
 });
