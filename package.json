@@ -1,14 +1,14 @@
 {
-  "name": "exampleperthwebsiteportfolio.com",
-  "version": "0.0.1",
-  "description": "\u001b[A\u001b[B\u001b[Example front-end layout skills",
+  "name": "flatwebpage.github.io",
+  "version": "1.0.1",
+  "description": "\u001b[A\u001b[B\u001b[Front-end layout skills showcase",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/Bartosz_Wyporkiewicz/portfolio_event_mananger.git"
+    "url": "git@github.com:Bartosz-D3V/flatwebpage.github.io.git"
   },
   "keywords": [
     "portfolio",
@@ -18,9 +18,9 @@
     "js",
     "html"
   ],
-  "author": "Bartosz Wyporkiewicz",
+  "author": "Bartosz",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/Bartosz_Wyporkiewicz/portfolio_event_mananger#readme",
+  "homepage": "https://github.com/Bartosz-D3V/flatwebpage.github.io/#readme",
   "dependencies": {
     "font-awesome": "^4.7.0",
     "reset-css": "^2.2.0",
