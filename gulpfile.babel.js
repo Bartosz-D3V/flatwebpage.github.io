@@ -68,7 +68,7 @@ gulp.task("styles", () => {
         .pipe(combineMQ())
         .pipe(uncss({
             html: [settings.indexLocation],
-            ignore: ['animated', '.slideInUp', '.fadeIn', '.zoomIn']
+            ignore: ['animated', '.slideInUp', '.fadeIn', '.zoomIn', '.nav-show']
         }))
         .pipe(concatCSS(settings.concatCSSName))
         .pipe(rename({
